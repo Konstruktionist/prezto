@@ -54,16 +54,20 @@ function prompt_kafka_setup {
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
   zstyle ':prezto:module:git:info:action' format ' %F{yellow}(%s)%f'
-  zstyle ':prezto:module:git:info:ahead' format ' %F{red}ahead%f'
-  zstyle ':prezto:module:git:info:behind' format ' %F{red}behind%f'
-  zstyle ':prezto:module:git:info:branch' format ' %F{green}%b%f'
+  zstyle ':prezto:module:git:info:ahead' format ' %F{red}ahead:%A%f'
+  zstyle ':prezto:module:git:info:behind' format ' %F{red}behind:%B%f'
+  zstyle ':prezto:module:git:info:branch' format ' %F{yellow}«%b»%f'
   zstyle ':prezto:module:git:info:commit' format ' %F{white}%.7c%f'
-  zstyle ':prezto:module:git:info:stashed' format ' %F{yellow}stashed%f'
-  zstyle ':prezto:module:git:info:dirty' format ' %F{red}dirty%f'
-  zstyle ':prezto:module:git:info:keys' format 'prompt' '%b%c%s%A%B%D%S'
+  zstyle ':prezto:module:git:info:stashed' format ' %F{yellow}stashed:%S%f'
+  zstyle ':prezto:module:git:info:added' format ' %F{red}added:%a%f'
+  zstyle ':prezto:module:git:info:deleted' format ' %F{red}deleted:%d%f'
+  zstyle ':prezto:module:git:info:modified' format ' %F{red}modified:%m%f'
+  zstyle ':prezto:module:git:info:untracked' format ' %F{red}untracked:%u%f'
+  zstyle ':prezto:module:git:info:keys' format 'prompt' '%b%c%s%A%B%a%d%m%u%S'
 
   # Define prompts.
-  PROMPT='%F{002}(%n@%M) %F{094}${_prompt_kafka_pwd}%f${git_info:+${(e)git_info[prompt]}}
+  PROMPT='%F{blue}(%n@%M) %F{green}${_prompt_kafka_pwd}%f
+  ${git_info:+${(e)git_info[prompt]}}
 ${editor_info[keymap]} '
   RPROMPT='%F{008}[%*]%{$reset_color%}' # time in grey
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
