@@ -47,7 +47,7 @@ function prompt_kafka_setup {
 
   # Set editor-info parameters.
   zstyle ':prezto:module:editor:info:completing' format '%B%F{black}...%f%b'
-  zstyle ':prezto:module:editor:info:keymap:primary' format '%F{blue}∰ %f'
+  zstyle ':prezto:module:editor:info:keymap:primary' format '%F{blue}○ %f'
   zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format '%F{blue}♺%f'
   zstyle ':prezto:module:editor:info:keymap:alternate' format '%F{blue}‹%f'
 
