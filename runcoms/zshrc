@@ -11,3 +11,5 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export GREP_COLOR='0;33;40'           # BSD.
+export GREP_COLORS="mt=$GREP_COLOR" # GNU.
