@@ -13,3 +13,17 @@ fi
 # Customize to your needs...
 export GREP_COLOR='0;33;40'           # BSD.
 export GREP_COLORS="mt=$GREP_COLOR" # GNU.
+
+# Use vim as a man-page viewer
+function vman() {
+  vim -c "SuperMan $*"
+
+  if [ "$?" != "0" ]; then
+    echo "No manual entry for $*"
+  fi
+}
+
+# Checks whether a website is down for you, or everybody
+function down4me () {
+	curl --silent http://www.isup.me/$* | grep -e "It's.*[.!]" | sed "s/\s*\(It's[^<>]*[.!]\).*\$/\1/"
+}
