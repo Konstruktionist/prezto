@@ -69,7 +69,7 @@ function prompt_kafka_setup {
   PROMPT='%F{blue}(%n@%M) %F{green}${_prompt_kafka_pwd}%f
   ${git_info:+${(e)git_info[prompt]}}
 ${editor_info[keymap]} '
-  RPROMPT='%F{008}[%*]%{$reset_color%}' # time in grey
+  RPROMPT='%F{243}[%*]%{$reset_color%}' # time in grey
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 
