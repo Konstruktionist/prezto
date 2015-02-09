@@ -11,8 +11,12 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-export GREP_COLOR='0;33;40'           # BSD.
+export GREP_COLOR='0;30;43'           # BSD.
 export GREP_COLORS="mt=$GREP_COLOR" # GNU.
+
+# tell slrn what the default news server is
+NNTPSERVER='reader.extremeusenet.nl'
+export NNTPSERVER
 
 # Use vim as a man-page viewer
 function vman() {
@@ -27,3 +31,9 @@ function vman() {
 function down4me () {
 	curl --silent http://www.isup.me/$* | grep -e "It's.*[.!]" | sed "s/\s*\(It's[^<>]*[.!]\).*\$/\1/"
 }
+
+alias gip='get_iplayer'
+alias gipc='get_iplayer --list categories'
+alias gips='get_iplayer --search'
+alias gl24='get_iplayer --preset last24'
+
